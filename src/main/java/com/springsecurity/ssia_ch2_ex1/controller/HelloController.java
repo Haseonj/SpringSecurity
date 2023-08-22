@@ -1,13 +1,15 @@
 package com.springsecurity.ssia_ch2_ex1.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("ch2-ex1")
+@RequestMapping("/ch2-ex1")
 public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello!";
+        return "Hello from ch2-ex1!";
     }
 }
