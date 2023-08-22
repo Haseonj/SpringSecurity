@@ -24,7 +24,7 @@ public class ControllerTests {
     @Test
     @DisplayName("인증 하지 않고 /hello 호출시 unauthorized를 반환하는가")
     public void helloUnauthenticated() throws Exception {
-        mvc.perform(get("/hello"))
+        mvc.perform(get("/ch2-ex1/hello"))
                 .andExpect(status().isUnauthorized());
     }
 
@@ -32,17 +32,17 @@ public class ControllerTests {
     @DisplayName("withMockUser 사용하여 /hello 호출시 ok 반환하는가?")
     @WithMockUser
     public void helloAuthenticated() throws Exception {
-        mvc.perform(get("/hello"))
-                .andExpect(content().string("Hello!"))
+        mvc.perform(get("/ch2-ex1/hello"))
+                .andExpect(content().string("Hello from ch2-ex1!"))
                 .andExpect(status().isOk());
     }
 
     @Test
     @DisplayName("가짜 유저를 만들어 인증하고 /hello 호출시 ok 반환하는가?")
     public void helloAuthenticatedWithUser() throws Exception {
-        mvc.perform(get("/hello")
+        mvc.perform(get("/ch2-ex1/hello")
                 .with(user("mary")))
-                .andExpect(content().string("Hello!"))
+                .andExpect(content().string("Hello from ch2-ex1!"))
                 .andExpect(status().isOk());
     }
 }
