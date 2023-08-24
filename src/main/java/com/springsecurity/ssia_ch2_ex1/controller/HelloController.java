@@ -4,8 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("ch2-ex1")
-@RequestMapping("/ch2-ex1")
+@RestController
 public class HelloController {
 
     @GetMapping("/hello")
