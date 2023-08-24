@@ -18,7 +18,7 @@ public class ProjectConfig {
 
     // 인메모리 인증을 위한 사용자 정보를 설정하고 제공하기 위한 빈
     // Inmemory : 데이터를 주기억 장치에 저장
-    @Bean()
+    @Bean
     public UserDetailsService userDetailsService() {
         var userDetailsService = new InMemoryUserDetailsManager();
 
