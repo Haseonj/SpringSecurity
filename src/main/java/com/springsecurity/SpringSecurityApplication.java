@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.springsecurity.ssia_ch2_ex4"})
+@ComponentScan(basePackages = {"com.springsecurity.ssia_ch2_ex5"})
 public class SpringSecurityApplication {
 
     public static void main(String[] args) {
