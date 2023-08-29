@@ -15,9 +15,23 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 public class ProjectConfig{
 
+
+    private final CustomAuthenticationProvider authenticationProvider;
+
+    @Autowired
+    public ProjectConfig(CustomAuthenticationProvider authenticationProvider) {
+        this.authenticationProvider = authenticationProvider;
+    }
+
     @Bean
     protected UserDetailsService userDetailsService() {
-        var user = new InMemoryUserDetailsManager()
+        return new InMemoryUserDetailsManager();
+    }
+
+    @Autowired
+    // AuthenticationManager 가 CustomAuthenticationProvider 를 사용 하도록 하는 설정
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(authenticationProvider);
     }
 
     @Bean
